@@ -12,6 +12,8 @@ body {
     font-size: 48px;
     background-color: white;
     padding: 20px;
+    position: absolute;
+    top: 0%;
 }
 
 .container {
@@ -29,14 +31,41 @@ body {
     display: flex;
 }
 
+
 .toprow > div,
 .middlerow > div,
 .bottomrow > div {
-    border: 1px solid black;
     width: 100px;
     height: 100px;
 }
 
+.topleft,
+.topmiddle,
+.middleleft,
+.middlemiddle,
+.bottomleft,
+.bottommiddle {
+    border-right: 1px solid black;
+}
+
+.topmiddle,
+.topright,
+.middlemiddle,
+.middleright,
+.bottommiddle,
+.bottomright {
+    border-left: 1px solid black;
+}
+
+.toprow > div,
+.middlerow > div {
+    border-bottom: 1px solid black;
+}
+
+.middlerow > div,
+.bottomrow > div {
+    border-top: 1px solid black;
+}
 
 .footer {
     position: absolute;
