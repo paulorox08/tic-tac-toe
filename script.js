@@ -19,7 +19,13 @@
 
 
 const topRight = document.querySelector(".topright");
-const exes = document.createElement("div");
-exes.textContent = "X";
-topRight.appendChild(exes);
+
+function move() {
+    const exes = document.createElement("div");
+    exes.textContent = "X";
+    topRight.appendChild(exes);
+}
+
+topRight.addEventListener('click', move);
+
 
