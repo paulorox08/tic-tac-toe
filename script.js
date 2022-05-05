@@ -22,9 +22,10 @@
 
 function makeAMove() {
     const topRight = document.querySelector(".topright");
-    const exes = document.createElement("div");
-    exes.textContent = "X";
-    topRight.appendChild(exes);
-    topRight.addEventListener('click', move);
+    topRight.addEventListener('click', () => {
+        const exes = document.createElement("div");
+        exes.textContent = "X";
+        topRight.appendChild(exes);
+    });
 }
 makeAMove();
