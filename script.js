@@ -18,14 +18,13 @@
 // });
 
 
-const topRight = document.querySelector(".topright");
 
-function move() {
+
+function makeAMove() {
+    const topRight = document.querySelector(".topright");
     const exes = document.createElement("div");
     exes.textContent = "X";
     topRight.appendChild(exes);
+    topRight.addEventListener('click', move);
 }
-
-topRight.addEventListener('click', move);
-
-
+makeAMove();
