@@ -29,3 +29,11 @@ function makeAMove() {
     });
 }
 makeAMove();
+
+const playerFactory = (name, shape) => {
+
+}
+
+const initializeBoard = (row, column) => {
+    
+}
