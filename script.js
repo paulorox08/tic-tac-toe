@@ -34,6 +34,6 @@ const playerFactory = (name, shape) => {
 
 }
 
-const initializeBoard = (row, column) => {
-    
+const initializeBoard = () => {
+    const container = 
 }

@@ -16,7 +16,7 @@ body {
     top: 0%;
 }
 
-.container {
+/* .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,23 +37,23 @@ body {
 .bottomrow > div {
     width: 100px;
     height: 100px;
-}
+} */
 
-.topleft,
-.topmiddle,
-.middleleft,
-.middlemiddle,
-.bottomleft,
-.bottommiddle {
+.topLeft,
+.topMiddle,
+.middleLeft,
+.middleMiddle,
+.bottomLeft,
+.bottomMiddle {
     border-right: 1px solid black;
 }
 
-.topmiddle,
-.topright,
-.middlemiddle,
-.middleright,
-.bottommiddle,
-.bottomright {
+.topMiddle,
+.topRight,
+.middleMiddle,
+.middleRight,
+.bottomMiddle,
+.bottomRight {
     border-left: 1px solid black;
 }
 
@@ -73,4 +73,30 @@ body {
     height: 40px;
     bottom: 0%;
     text-align: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+    grid-template-areas: 
+    "topLeft topMiddle topRight"
+    "middleLeft middleMiddle middleRight"
+    "bottomLeft bottomMiddle bottomRight";
+}
+
+.topLeft {
+    grid-area: topLeft;
+}
+
+.topMiddle {
+    grid-area: topMiddle;
+}
+
+.topRight {
+    grid-area: topRight;
+}
+
+.middleLeft {
+    grid-area: middleLeft;
 }
