@@ -5,6 +5,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .header {
@@ -16,57 +17,6 @@ body {
     top: 0%;
 }
 
-/* .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-
-.toprow,
-.middlerow,
-.bottomrow {
-    display: flex;
-}
-
-
-.toprow > div,
-.middlerow > div,
-.bottomrow > div {
-    width: 100px;
-    height: 100px;
-} */
-
-.topLeft,
-.topMiddle,
-.middleLeft,
-.middleMiddle,
-.bottomLeft,
-.bottomMiddle {
-    border-right: 1px solid black;
-}
-
-.topMiddle,
-.topRight,
-.middleMiddle,
-.middleRight,
-.bottomMiddle,
-.bottomRight {
-    border-left: 1px solid black;
-}
-
-.toprow > div,
-.middlerow > div {
-    border-bottom: 1px solid black;
-}
-
-.middlerow > div,
-.bottomrow > div {
-    border-top: 1px solid black;
-}
-
 .footer {
     position: absolute;
     width: 100%;
@@ -76,27 +26,15 @@ body {
 }
 
 .container {
-    display: grid;
-    grid-template-columns: 100px 100px 100px;
-    grid-template-rows: 100px 100px 100px;
-    grid-template-areas: 
-    "topLeft topMiddle topRight"
-    "middleLeft middleMiddle middleRight"
-    "bottomLeft bottomMiddle bottomRight";
+    display: flex;
+    flex-wrap: wrap;
+    width: 306px;
+    height: 306px;
+
 }
 
-.topLeft {
-    grid-area: topLeft;
-}
-
-.topMiddle {
-    grid-area: topMiddle;
-}
-
-.topRight {
-    grid-area: topRight;
-}
-
-.middleLeft {
-    grid-area: middleLeft;
+.square {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
 }

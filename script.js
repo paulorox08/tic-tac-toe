@@ -20,20 +20,32 @@
 
 
 
-function makeAMove() {
-    const topRight = document.querySelector(".topright");
-    topRight.addEventListener('click', () => {
-        const exes = document.createElement("div");
-        exes.textContent = "X";
-        topRight.appendChild(exes);
-    });
-}
-makeAMove();
+// function makeAMove() {
+//     const topRight = document.querySelector(".topright");
+//     topRight.addEventListener('click', () => {
+//         const exes = document.createElement("div");
+//         exes.textContent = "X";
+//         topRight.appendChild(exes);
+//     });
+// }
+// makeAMove();
 
-const playerFactory = (name, shape) => {
+// const playerFactory = (name, shape) => {
 
-}
+// }
 
 const initializeBoard = () => {
-    const container = 
+    const container = document.querySelector(".container");
+    
+    let i = 0;
+    while (i < 9) {
+        const square = document.createElement('div');
+        square.className = "square";
+        container.appendChild(square);
+
+        i++;
+    }
+
 }
+
+initializeBoard();
