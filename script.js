@@ -34,18 +34,28 @@
 
 // }
 
-const initializeBoard = () => {
-    const container = document.querySelector(".container");
-    
-    let i = 0;
-    while (i < 9) {
-        const square = document.createElement('div');
-        square.className = "square";
-        container.appendChild(square);
 
-        i++;
+
+const gameBoard = (() => {
+    const container = document.querySelector(".container");
+    let i = 0;
+    const test = () => {
+        while (i < 9) {
+            const square = document.createElement('div');
+            square.className = "square";
+            square.onclick = () => {
+                square.textContent = "X";
+            };
+
+            container.appendChild(square);
+
+            i ++;
+        };
     }
 
-}
+    
 
-initializeBoard();
+    return {test}
+})();
+
+gameBoard.test();

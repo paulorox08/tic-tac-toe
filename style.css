@@ -30,6 +30,8 @@ body {
     flex-wrap: wrap;
     width: 306px;
     height: 306px;
+    /* background-color: blue; */
+
 
 }
 
@@ -37,4 +39,13 @@ body {
     width: 100px;
     height: 100px;
     border: 1px solid black;
+
+}
+
+.bigSquare {
+    position: absolute;
+    opacity: 1;
+    border: 5px solid white;
+    width: 303px;
+    height: 303px;
 }
