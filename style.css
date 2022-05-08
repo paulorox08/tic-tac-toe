@@ -30,22 +30,17 @@ body {
     flex-wrap: wrap;
     width: 306px;
     height: 306px;
-    /* background-color: blue; */
-
-
 }
 
 .square {
     width: 100px;
     height: 100px;
     border: 1px solid black;
-
+    justify-content: center;
+    align-items: center;
 }
 
-.bigSquare {
-    position: absolute;
-    opacity: 1;
-    border: 5px solid white;
-    width: 303px;
-    height: 303px;
+.square > span {
+    font-size: 36px;
+    align-items: center;
 }

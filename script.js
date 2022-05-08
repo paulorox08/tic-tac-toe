@@ -34,28 +34,43 @@
 
 // }
 
+let trackPlayer = [1,2,1,2,1,2];
 
+function lastIndex() {
+    let length = trackPlayer.length;
+    let index = length - 1;
+    return index
+}
 
-const gameBoard = (() => {
+const gameBoard = () => {
     const container = document.querySelector(".container");
     let i = 0;
-    const test = () => {
-        while (i < 9) {
-            const square = document.createElement('div');
-            square.className = "square";
-            square.onclick = () => {
-                square.textContent = "X";
+    while (i < 9) {
+        let square = document.createElement('div');
+        square.className = "square material-symbols-outlined"
+
+        square.onclick = () => {
+            if (trackPlayer[lastIndex()] == 1) {
+                let object = document.createElement('span');
+                object.className = "material-symbols-outlined";
+                object.innerText = "close";
+                square.appendChild(object);
+            }
+            else if (trackPlayer[lastIndex()] == 2) {
+                let object = document.createElement('span');
+                object.className = "material-symbols-outlined";
+                object.innerText = "circle";
+                square.appendChild(object);
             };
-
-            container.appendChild(square);
-
-            i ++;
         };
-    }
 
-    
+        container.appendChild(square);
 
-    return {test}
-})();
+        i ++;
+    };
 
-gameBoard.test();
+};
+
+gameBoard();
+
+console.log(lastIndex());
