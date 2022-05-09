@@ -34,7 +34,7 @@
 
 // }
 
-let trackPlayer = [1,2,1,2,1,2];
+let trackPlayer = [1,2,1,2,1,1];
 
 function lastIndex() {
     let length = trackPlayer.length;
@@ -47,7 +47,7 @@ const gameBoard = () => {
     let i = 0;
     while (i < 9) {
         let square = document.createElement('div');
-        square.className = "square material-symbols-outlined"
+        square.className = "square"
 
         square.onclick = () => {
             if (trackPlayer[lastIndex()] == 1) {
@@ -55,12 +55,14 @@ const gameBoard = () => {
                 object.className = "material-symbols-outlined";
                 object.innerText = "close";
                 square.appendChild(object);
+                
             }
             else if (trackPlayer[lastIndex()] == 2) {
                 let object = document.createElement('span');
                 object.className = "material-symbols-outlined";
                 object.innerText = "circle";
                 square.appendChild(object);
+
             };
         };
 
