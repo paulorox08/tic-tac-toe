@@ -47,21 +47,15 @@ const gameBoard = () => {
     let i = 0;
     while (i < 9) {
         let square = document.createElement('div');
-        square.className = "square"
+        square.className = "square material-symbols-outlined"
 
         square.onclick = () => {
             if (trackPlayer[lastIndex()] == 1) {
-                let object = document.createElement('span');
-                object.className = "object material-symbols-outlined";
-                object.innerText = "close";
-                square.appendChild(object);
+                square.innerText = "close";
                 
             }
             else if (trackPlayer[lastIndex()] == 2) {
-                let object = document.createElement('span');
-                object.className = "object material-symbols-outlined";
-                object.innerText = "circle";
-                square.appendChild(object);
+                square.innerText = "circle";
 
             };
         };
