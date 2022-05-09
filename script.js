@@ -34,7 +34,7 @@
 
 // }
 
-let trackPlayer = [1,2,1,2,1,2];
+let trackPlayer = [1,2,1,2,1,2,1];
 
 function lastIndex() {
     let length = trackPlayer.length;
@@ -52,10 +52,12 @@ const gameBoard = () => {
         square.onclick = () => {
             if (trackPlayer[lastIndex()] == 1) {
                 square.innerText = "close";
+                trackPlayer.push(2);
                 
             }
             else if (trackPlayer[lastIndex()] == 2) {
                 square.innerText = "circle";
+                trackPlayer.push(1);
 
             };
         };
@@ -70,3 +72,4 @@ const gameBoard = () => {
 gameBoard();
 
 console.log(lastIndex());
+console.log(trackPlayer)
