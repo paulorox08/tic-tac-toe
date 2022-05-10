@@ -45,9 +45,10 @@ function lastIndex() {
 const gameBoard = () => {
     const container = document.querySelector(".container");
     let i = 0;
+    let j = 0;
     while (i < 9) {
         let square = document.createElement('div');
-        square.className = "square material-symbols-outlined"
+        square.className = `square material-symbols-outlined ${j}`
 
         square.onclick = () => {
             if (trackPlayer[lastIndex()] == 1) {
@@ -65,6 +66,7 @@ const gameBoard = () => {
         container.appendChild(square);
 
         i ++;
+        j++;
     };
 
 };
