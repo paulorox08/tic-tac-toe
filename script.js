@@ -61,6 +61,8 @@ const gameBoard = () => {
                 trackPlayer.push(1);
 
             };
+
+            checkWin();
         };
 
         container.appendChild(square);
@@ -75,7 +77,12 @@ gameBoard();
 
 const checkWin = () => {
     let square = document.querySelectorAll('.square');
-    
+    let i = 0;
+    if (square[0].innerText != "") {
+        if (square[0].innerText === square[1].innerText && square[1].innerText === square[2].innerText) {
+            console.log("Good Job")
+        }
+    }
 }
 
 console.log(lastIndex());
