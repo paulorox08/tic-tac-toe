@@ -73,5 +73,10 @@ const gameBoard = () => {
 
 gameBoard();
 
+const checkWin = () => {
+    let square = document.querySelectorAll('.square');
+    
+}
+
 console.log(lastIndex());
 console.log(trackPlayer)
