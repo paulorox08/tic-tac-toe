@@ -34,7 +34,7 @@
 
 // }
 
-let trackPlayer = [1,2,1,2,1,2,1];
+let trackPlayer = [1];
 
 function lastIndex() {
     let length = trackPlayer.length;
@@ -80,6 +80,35 @@ const checkWin = () => {
     let i = 0;
     if (square[0].innerText != "") {
         if (square[0].innerText === square[1].innerText && square[1].innerText === square[2].innerText) {
+            console.log("Good Job")
+        }
+        if (square[0].innerText === square[4].innerText && square[4].innerText === square[8].innerText) {
+            console.log("Good Job")
+        }
+        if (square[0].innerText === square[3].innerText && square[3].innerText === square[6].innerText) {
+            console.log("Good Job")
+        }
+    }
+    if (square[1].innerText != "") {
+        if (square[1].innerText === square[4].innerText && square[4].innerText === square[7].innerText) {
+            console.log("Good Job")
+        }
+    }
+    if (square[2].innerText != "") {
+        if (square[2].innerText === square[5].innerText && square[5].innerText === square[8].innerText) {
+            console.log("Good Job")
+        }
+        if (square[2].innerText === square[4].innerText && square[4].innerText === square[6].innerText) {
+            console.log("Good Job")
+        }
+    }
+    if (square[3].innerText != "") {
+        if (square[3].innerText === square[4].innerText && square[4].innerText === square[5].innerText) {
+            console.log("Good Job")
+        }
+    }
+    if (square[6].innerText != "") {
+        if (square[6].innerText === square[7].innerText && square[7].innerText === square[8].innerText) {
             console.log("Good Job")
         }
     }
