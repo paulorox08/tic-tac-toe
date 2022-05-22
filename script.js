@@ -54,11 +54,13 @@ const gameBoard = () => {
             if (trackPlayer[lastIndex()] == 1) {
                 square.innerText = "close";
                 trackPlayer.push(2);
+                square.onclick = null;
                 
             }
             else if (trackPlayer[lastIndex()] == 2) {
                 square.innerText = "circle";
                 trackPlayer.push(1);
+                square.onclick = null;
 
             };
 
