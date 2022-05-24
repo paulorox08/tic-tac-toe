@@ -118,3 +118,18 @@ const checkWin = () => {
 
 console.log(lastIndex());
 console.log(trackPlayer)
+
+const interface = () => {
+    const interfaceText = document.querySelector('.interfaceText');
+    interfaceText.innerText = "Type your names above and press submit";
+
+    const button = document.querySelector('.button');
+    const nameOne = document.querySelector('.playerOne');
+    const nameTwo = document.querySelector('.playerTwo');
+    button.addEventListener('click', () => {
+        interfaceText.innerText = `${nameOne.value} versus ${nameTwo.value}`
+        button.style.display = 'none';
+    })
+}
+
+interface();
