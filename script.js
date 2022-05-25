@@ -127,8 +127,13 @@ const interface = () => {
     const nameOne = document.querySelector('.playerOne');
     const nameTwo = document.querySelector('.playerTwo');
     button.addEventListener('click', () => {
-        interfaceText.innerText = `${nameOne.value} versus ${nameTwo.value}`
-        button.style.display = 'none';
+        if (nameOne.value == "" && nameTwo.value == "") {
+            interfaceText.innerText = "Please write both names"
+        }
+        if (nameOne.value != "" && nameTwo.value != "") {
+            interfaceText.innerText = `${nameOne.value} vs. ${nameTwo.value}`
+            button.style.display = 'none';
+        }
     })
 }
 
