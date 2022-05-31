@@ -42,7 +42,26 @@ function lastIndex() {
     return index
 }
 
+const interface = () => {
+    const interfaceText = document.querySelector('.interfaceText');
+    interfaceText.innerText = "Type your names above and press submit";
+
+    const button = document.querySelector('.button');
+    const nameOne = document.querySelector('.playerOne');
+    const nameTwo = document.querySelector('.playerTwo');
+    button.addEventListener('click', () => {
+        if (nameOne.value == "" && nameTwo.value == "") {
+            interfaceText.innerText = "Please write both names"
+        }
+        if (nameOne.value != "" && nameTwo.value != "") {
+            interfaceText.innerText = `${nameOne.value} vs. ${nameTwo.value}`
+            button.style.display = 'none';
+        }
+    })
+}
+
 const gameBoard = () => {
+    interface();
     const container = document.querySelector(".container");
     let i = 0;
     let j = 0;
@@ -82,7 +101,6 @@ const checkWin = () => {
     let i = 0;
     if (square[0].innerText != "") {
         if (square[0].innerText === square[1].innerText && square[1].innerText === square[2].innerText) {
-            console.log("Good Job")
         }
         if (square[0].innerText === square[4].innerText && square[4].innerText === square[8].innerText) {
             console.log("Good Job")
@@ -119,22 +137,3 @@ const checkWin = () => {
 console.log(lastIndex());
 console.log(trackPlayer)
 
-const interface = () => {
-    const interfaceText = document.querySelector('.interfaceText');
-    interfaceText.innerText = "Type your names above and press submit";
-
-    const button = document.querySelector('.button');
-    const nameOne = document.querySelector('.playerOne');
-    const nameTwo = document.querySelector('.playerTwo');
-    button.addEventListener('click', () => {
-        if (nameOne.value == "" && nameTwo.value == "") {
-            interfaceText.innerText = "Please write both names"
-        }
-        if (nameOne.value != "" && nameTwo.value != "") {
-            interfaceText.innerText = `${nameOne.value} vs. ${nameTwo.value}`
-            button.style.display = 'none';
-        }
-    })
-}
-
-interface();
