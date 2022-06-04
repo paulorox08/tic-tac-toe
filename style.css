@@ -10,6 +10,7 @@ body {
 }
 
 .header {
+    z-index: -4;
     text-align: center;
     font-size: 48px;
     background-color: white;
@@ -18,37 +19,6 @@ body {
     top: 0%;
 }
 
-.form {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    background-color: grey;
-}
-
-.players {
-    display: flex;
-    flex-direction: row;
-    gap: 5em;
-    padding: 1em;
-}
-
-.formOne {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.formTwo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-input {
-    text-align: center;
-}
 
 .footer {
     position: absolute;
@@ -78,20 +48,40 @@ input {
     }
 }
 
-.interface {
-    background-color: green;
-    width: 100%;
-    height: 62px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1em;
-    gap: 5px;
-}
-
 .button {
     border: 1px solid black;
     padding: 2px;
 }
 
+
+.scoreboard {
+    width: 100%;
+    background-color: gray;
+    height: auto;
+    padding: 10px;
+    margin-bottom: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 60px;
+}
+
+.number {
+    width: 21px;
+    height: 21px;
+    border: 2px solid black;
+}
+
+
+.xscore.material-symbols-outlined,
+.oscore.material-symbols-outlined {
+    font-size: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    border: 2px solid black;
+    padding-left: 10px;
+    padding-right: 20px;
+}
