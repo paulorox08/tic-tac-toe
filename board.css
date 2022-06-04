@@ -11,33 +11,33 @@
 .square:first-child,
 .square:nth-child(2),
 .square:nth-child(3) {
-    border-top: 1px solid white;
+    border-top: 0;
 
 }
 
 .square:first-child,
 .square:nth-child(4),
 .square:nth-child(7) {
-    border-left: 1px solid white;
+    border-left: 0;
 }
 
 .square:nth-child(3),
 .square:nth-child(6),
 .square:nth-child(9) {
-    border-right: 1px solid white;
+    border-right: 0;
 }
 
 .square:nth-child(7),
 .square:nth-child(8),
 .square:nth-child(9) {
-    border-bottom: 1px solid white;
+    border-bottom: 0;
 }
 
 
 /* ANIMATIONS */
 .square:first-child {
     animation: topLeft 0.5s ease-in forwards;
-    border: 1px solid white;
+    border: 0;
 }
 
 
@@ -52,7 +52,7 @@
 
 .square:nth-child(2) {
     animation: moveUp 0.5s ease-in forwards;
-    border-bottom: 1px solid white;
+    border-bottom: 0;
 }
 
 @keyframes moveUp {
@@ -66,7 +66,7 @@
 
 .square:nth-child(3) {
     animation: topRight 0.5s ease-in forwards;
-    border: 1px solid white;
+    border: 0;
 }
 
 @keyframes topRight {
@@ -80,7 +80,7 @@
 
 .square:nth-child(4) {
     animation: moveLeft 0.5s ease-in forwards;
-    border-right: 1px solid white;
+    border-right: 0;
 }
 @keyframes moveLeft {
     0% {
@@ -93,7 +93,7 @@
 
 .square:nth-child(6) {
     animation: moveRight 0.5s ease-in forwards;
-    border-left: 1px solid white;
+    border-left: 0;
 }
 
 @keyframes moveRight {
@@ -107,7 +107,7 @@
 
 .square:nth-child(7) {
     animation: bottomLeft 0.5s ease-in forwards;
-    border: 1px solid white;
+    border: 0;
 
 }
 
@@ -122,7 +122,7 @@
 
 .square:nth-child(8) {
     animation: moveDown 0.5s ease-in forwards;
-    border-top: 1px solid white;
+    border-top: 0;
 }
 
 @keyframes moveDown {
@@ -136,7 +136,7 @@
 
 .square:nth-child(9) {
     animation: bottomRight 0.5s ease-in forwards;
-    border: 1px solid white;
+    border: 0;
 }
 
 @keyframes bottomRight {

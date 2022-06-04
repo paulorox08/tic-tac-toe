@@ -99,37 +99,54 @@ gameBoard();
 const checkWin = () => {
     let square = document.querySelectorAll('.square');
     let i = 0;
+
+    let horizontal = document.querySelector('.containerHorizontal');
+    let horizontalTop = document.querySelector('.horizontal.top');
+    let horizontalMid = document.querySelector('.horizontal.mid');
+    let horizontalBot = document.querySelector('.horizontal.bot');
+
+
+    let vertical = document.querySelector('.containerHorizontal');
+    let verticalLeft = document.querySelector('.vertical.left');
+    let verticalMid = document.querySelector('.vertical.mid');
+    let verticalRight = document.querySelector('.vertical.right');
+
+
+    let diagonal = document.querySelector('.containerHorizontal');
+    let diagonalLeft = document.querySelector('.diagonal.left');
+    let diagonalRight = document.querySelector('.diagonal.right');
     if (square[0].innerText != "") {
         if (square[0].innerText === square[1].innerText && square[1].innerText === square[2].innerText) {
+            horizontalTop.style.visibility = 'visible';
         }
         if (square[0].innerText === square[4].innerText && square[4].innerText === square[8].innerText) {
-            console.log("Good Job")
+            diagonalRight.style.visibility = 'visible';
         }
         if (square[0].innerText === square[3].innerText && square[3].innerText === square[6].innerText) {
-            console.log("Good Job")
+            verticalLeft.style.visibility = 'visible';
         }
     }
     if (square[1].innerText != "") {
         if (square[1].innerText === square[4].innerText && square[4].innerText === square[7].innerText) {
-            console.log("Good Job")
+            verticalMid.style.visibility = 'visible';
         }
     }
     if (square[2].innerText != "") {
         if (square[2].innerText === square[5].innerText && square[5].innerText === square[8].innerText) {
-            console.log("Good Job")
+            verticalRight.style.visibility = 'visible';
         }
         if (square[2].innerText === square[4].innerText && square[4].innerText === square[6].innerText) {
-            console.log("Good Job")
+            diagonalLeft.style.visibility = 'visible';
         }
     }
     if (square[3].innerText != "") {
         if (square[3].innerText === square[4].innerText && square[4].innerText === square[5].innerText) {
-            console.log("Good Job")
+            horizontalMid.style.visibility = 'visible';
         }
     }
     if (square[6].innerText != "") {
         if (square[6].innerText === square[7].innerText && square[7].innerText === square[8].innerText) {
-            console.log("Good Job")
+            horizontalBot.style.visibility = 'visible';
         }
     }
 }
