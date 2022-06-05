@@ -92,14 +92,21 @@ const gameBoard = () => {
 
 gameBoard();
 
+const updateScore = () => {
+    const x = document.querySelector('.x');
+    const o = document.querySelector('.o');
 
+    if (trackPlayer[lastIndex()] == 2) {
+        x.innerText ++;
+    }
+    else {
+        o.innerText ++;
+    }
+}
 
 const checkWin = () => {
     let square = document.querySelectorAll('.square');
     let container = document.querySelector('.container')
-    let i = 0;
-
-    let message = document.querySelector('.message');
 
     let horizontalTop = document.querySelector('.horizontal.top');
     let horizontalMid = document.querySelector('.horizontal.mid');
@@ -116,42 +123,50 @@ const checkWin = () => {
         if (square[0].innerText === square[1].innerText && square[1].innerText === square[2].innerText) {
             horizontalTop.style.visibility = 'visible';
             container.style.pointerEvents = 'none';
+            updateScore();
         }
         if (square[0].innerText === square[4].innerText && square[4].innerText === square[8].innerText) {
             diagonalRight.style.visibility = 'visible';
             container.style.pointerEvents = 'none';
+            updateScore();
         }
         if (square[0].innerText === square[3].innerText && square[3].innerText === square[6].innerText) {
             verticalLeft.style.visibility = 'visible';
             container.style.pointerEvents = 'none';
+            updateScore();
         }
     }
-    if (square[1].innerText != "") {
+    else if (square[1].innerText != "") {
         if (square[1].innerText === square[4].innerText && square[4].innerText === square[7].innerText) {
             verticalMid.style.visibility = 'visible';
             container.style.pointerEvents = 'none';
+            updateScore();
         }
     }
-    if (square[2].innerText != "") {
+    else if (square[2].innerText != "") {
         if (square[2].innerText === square[5].innerText && square[5].innerText === square[8].innerText) {
             verticalRight.style.visibility = 'visible';
             container.style.pointerEvents = 'none';
+            updateScore();
         }
         if (square[2].innerText === square[4].innerText && square[4].innerText === square[6].innerText) {
             diagonalLeft.style.visibility = 'visible';
             container.style.pointerEvents = 'none';
+            updateScore();
         }
     }
-    if (square[3].innerText != "") {
+    else if (square[3].innerText != "") {
         if (square[3].innerText === square[4].innerText && square[4].innerText === square[5].innerText) {
             horizontalMid.style.visibility = 'visible';
             container.style.pointerEvents = 'none';
+            updateScore();
         }
     }
-    if (square[6].innerText != "") {
+    else if (square[6].innerText != "") {
         if (square[6].innerText === square[7].innerText && square[7].innerText === square[8].innerText) {
             horizontalBot.style.visibility = 'visible';
             container.style.pointerEvents = 'none';
+            updateScore();
         }
     }
 }
@@ -161,37 +176,25 @@ const newGame = () => {
     const refresh = document.querySelector('.refresh');
     const container = document.querySelector('.container');
 
-    let horizontalTop = document.querySelector('.horizontal.top');
-    let horizontalMid = document.querySelector('.horizontal.mid');
-    let horizontalBot = document.querySelector('.horizontal.bot');
-
-    let verticalLeft = document.querySelector('.vertical.left');
-    let verticalMid = document.querySelector('.vertical.mid');
-    let verticalRight = document.querySelector('.vertical.right');
-
-    let diagonalLeft = document.querySelector('.diagonal.left');
-    let diagonalRight = document.querySelector('.diagonal.right');
-
     refresh.addEventListener('click', () => {
         container.innerText = "";
 
         trackPlayer.length = 1;
         playerTurn();
 
-        horizontalTop.style.visibility = 'hidden';
-        horizontalMid.style.visibility = 'hidden';
-        horizontalBot.style.visibility = 'hidden';
+        let horizontalTop = document.querySelector('.horizontal.top').style.visibility = 'hidden';
+        let horizontalMid = document.querySelector('.horizontal.mid').style.visibility = 'hidden';
+        let horizontalBot = document.querySelector('.horizontal.bot').style.visibility = 'hidden';
 
-        verticalLeft.style.visibility = 'hidden';
-        verticalMid.style.visibility = 'hidden';
-        verticalRight.style.visibility = 'hidden';
+        let verticalLeft = document.querySelector('.vertical.left').style.visibility = 'hidden';
+        let verticalMid = document.querySelector('.vertical.mid').style.visibility = 'hidden';
+        let verticalRight = document.querySelector('.vertical.right').style.visibility = 'hidden';
 
-        diagonalLeft.style.visibility = 'hidden';
-        diagonalRight.style.visibility = 'hidden';
+        let diagonalLeft = document.querySelector('.diagonal.left').style.visibility = 'hidden';
+        let diagonalRight = document.querySelector('.diagonal.right').style.visibility = 'hidden';
 
         container.style.pointerEvents = 'initial';
         
-
         console.log(trackPlayer);
 
         gameBoard();
@@ -200,3 +203,4 @@ const newGame = () => {
 }
 
 newGame();
+
