@@ -46,16 +46,16 @@ const playerTurn = () => {
     const xscore = document.querySelector('.xscore');
     const oscore = document.querySelector('.oscore');
 
-    if (trackPlayer[lastIndex()] == 1) {
+    if (trackPlayer[lastIndex()] == 2) {
         oscore.style.borderBottom = '4px solid black';
         xscore.style.borderBottom = '4px solid gray';
     }
-    else if (trackPlayer[lastIndex()] == 2) {
+    else if (trackPlayer[lastIndex()] == 1) {
         xscore.style.borderBottom = '4px solid black';
         oscore.style.borderBottom = '4px solid gray';
     };
 }
-
+playerTurn();
 
 const gameBoard = () => {
     const container = document.querySelector(".container");
@@ -67,18 +67,18 @@ const gameBoard = () => {
 
         square.onclick = () => {
             if (trackPlayer[lastIndex()] == 1) {
-                playerTurn();
                 square.innerText = "close";
                 trackPlayer.push(2);
+                playerTurn();
                 square.onclick = null;
             }
             else if (trackPlayer[lastIndex()] == 2) {
-                playerTurn();
                 square.innerText = "circle";
                 trackPlayer.push(1);
+                playerTurn();
                 square.onclick = null;
             };
-
+            console.log(trackPlayer);
             checkWin();
         };
 
@@ -175,6 +175,9 @@ const newGame = () => {
     refresh.addEventListener('click', () => {
         container.innerText = "";
 
+        trackPlayer.length = 1;
+        playerTurn();
+
         horizontalTop.style.visibility = 'hidden';
         horizontalMid.style.visibility = 'hidden';
         horizontalBot.style.visibility = 'hidden';
@@ -188,8 +191,7 @@ const newGame = () => {
 
         container.style.pointerEvents = 'initial';
         
-        playerTurn();
-        trackPlayer.splice(1);
+
         console.log(trackPlayer);
 
         gameBoard();
