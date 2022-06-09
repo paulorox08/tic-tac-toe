@@ -136,14 +136,14 @@ const checkWin = () => {
             updateScore();
         }
     }
-    else if (square[1].innerText != "") {
+    if (square[1].innerText != "") {
         if (square[1].innerText === square[4].innerText && square[4].innerText === square[7].innerText) {
             verticalMid.style.visibility = 'visible';
             container.style.pointerEvents = 'none';
             updateScore();
         }
     }
-    else if (square[2].innerText != "") {
+    if (square[2].innerText != "") {
         if (square[2].innerText === square[5].innerText && square[5].innerText === square[8].innerText) {
             verticalRight.style.visibility = 'visible';
             container.style.pointerEvents = 'none';
@@ -155,14 +155,14 @@ const checkWin = () => {
             updateScore();
         }
     }
-    else if (square[3].innerText != "") {
+    if (square[3].innerText != "") {
         if (square[3].innerText === square[4].innerText && square[4].innerText === square[5].innerText) {
             horizontalMid.style.visibility = 'visible';
             container.style.pointerEvents = 'none';
             updateScore();
         }
     }
-    else if (square[6].innerText != "") {
+    if (square[6].innerText != "") {
         if (square[6].innerText === square[7].innerText && square[7].innerText === square[8].innerText) {
             horizontalBot.style.visibility = 'visible';
             container.style.pointerEvents = 'none';
