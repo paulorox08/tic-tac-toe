@@ -83,16 +83,18 @@ const newGame = () => {
         trackPlayer.length = 1;
         playerTurn();
 
-        let horizontalTop = document.querySelector('.horizontal.top').style.visibility = 'hidden';
-        let horizontalMid = document.querySelector('.horizontal.mid').style.visibility = 'hidden';
-        let horizontalBot = document.querySelector('.horizontal.bot').style.visibility = 'hidden';
+        let horizontalTop = document.querySelector('.horizontal.top').style.transition = 'none';
+        let horizontalTop1 = document.querySelector('.horizontal.top').style.opacity = '0';
 
-        let verticalLeft = document.querySelector('.vertical.left').style.visibility = 'hidden';
-        let verticalMid = document.querySelector('.vertical.mid').style.visibility = 'hidden';
-        let verticalRight = document.querySelector('.vertical.right').style.visibility = 'hidden';
+        let horizontalMid = document.querySelector('.horizontal.mid').style.opacity = '0';
+        let horizontalBot = document.querySelector('.horizontal.bot').style.opacity = '0';
 
-        let diagonalLeft = document.querySelector('.diagonal.left').style.visibility = 'hidden';
-        let diagonalRight = document.querySelector('.diagonal.right').style.visibility = 'hidden';
+        let verticalLeft = document.querySelector('.vertical.left').style.opacity = '0';
+        let verticalMid = document.querySelector('.vertical.mid').style.opacity = '0';
+        let verticalRight = document.querySelector('.vertical.right').style.opacity = '0';
+
+        let diagonalLeft = document.querySelector('.diagonal.left').style.opacity = '0';
+        let diagonalRight = document.querySelector('.diagonal.right').style.opacity = '0';
 
         container.style.pointerEvents = 'initial';
         

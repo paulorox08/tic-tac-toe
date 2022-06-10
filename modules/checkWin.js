@@ -19,50 +19,58 @@ const checkWin = () => {
 
     if (square[0].innerText != "") {
         if (square[0].innerText === square[1].innerText && square[1].innerText === square[2].innerText) {
-            horizontalTop.style.visibility = 'visible';
+            horizontalTop.style.opacity = '1';
+            horizontalTop.style.transition = '1s ease';
             container.style.pointerEvents = 'none';
             updateScore();
         }
         if (square[0].innerText === square[4].innerText && square[4].innerText === square[8].innerText) {
-            diagonalRight.style.visibility = 'visible';
+            diagonalRight.style.opacity = '1';
+            diagonalRight.style.transition = '1s ease';
             container.style.pointerEvents = 'none';
             updateScore();
         }
         if (square[0].innerText === square[3].innerText && square[3].innerText === square[6].innerText) {
-            verticalLeft.style.visibility = 'visible';
+            verticalLeft.style.opacity = '1';
+            verticalLeft.style.transition = '1s ease';
             container.style.pointerEvents = 'none';
             updateScore();
         }
     }
     if (square[1].innerText != "") {
         if (square[1].innerText === square[4].innerText && square[4].innerText === square[7].innerText) {
-            verticalMid.style.visibility = 'visible';
+            verticalMid.style.opacity = '1';
+            verticalMid.style.transition = '1s ease';
             container.style.pointerEvents = 'none';
             updateScore();
         }
     }
     if (square[2].innerText != "") {
         if (square[2].innerText === square[5].innerText && square[5].innerText === square[8].innerText) {
-            verticalRight.style.visibility = 'visible';
+            verticalRight.style.opacity = '1';
+            verticalRight.style.transition = '1s ease';
             container.style.pointerEvents = 'none';
             updateScore();
         }
         if (square[2].innerText === square[4].innerText && square[4].innerText === square[6].innerText) {
-            diagonalLeft.style.visibility = 'visible';
+            diagonalLeft.style.opacity = '1';
+            diagonalLeft.style.transition = '1s ease';
             container.style.pointerEvents = 'none';
             updateScore();
         }
     }
     if (square[3].innerText != "") {
         if (square[3].innerText === square[4].innerText && square[4].innerText === square[5].innerText) {
-            horizontalMid.style.visibility = 'visible';
+            horizontalMid.style.opacity = '1';
+            horizontalMid.style.transition = '1s ease';
             container.style.pointerEvents = 'none';
             updateScore();
         }
     }
     if (square[6].innerText != "") {
         if (square[6].innerText === square[7].innerText && square[7].innerText === square[8].innerText) {
-            horizontalBot.style.visibility = 'visible';
+            horizontalBot.style.opacity = '1';
+            horizontalBot.style.transition = '1s ease';
             container.style.pointerEvents = 'none';
             updateScore();
         }
