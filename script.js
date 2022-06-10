@@ -87,14 +87,25 @@ const newGame = () => {
         let horizontalTop1 = document.querySelector('.horizontal.top').style.opacity = '0';
 
         let horizontalMid = document.querySelector('.horizontal.mid').style.opacity = '0';
+        let horizontalMid1 = document.querySelector('.horizontal.mid').style.transition = 'none';
+
         let horizontalBot = document.querySelector('.horizontal.bot').style.opacity = '0';
+        let horizontalBot1 = document.querySelector('.horizontal.bot').style.transition = 'none';
 
         let verticalLeft = document.querySelector('.vertical.left').style.opacity = '0';
+        let verticalLeft1 = document.querySelector('.vertical.left').style.transition = 'none';
+
         let verticalMid = document.querySelector('.vertical.mid').style.opacity = '0';
+        let verticalMid1 = document.querySelector('.vertical.mid').style.transition = 'none';
+
         let verticalRight = document.querySelector('.vertical.right').style.opacity = '0';
+        let verticalRight1 = document.querySelector('.vertical.right').style.transition = 'none';
 
         let diagonalLeft = document.querySelector('.diagonal.left').style.opacity = '0';
+        let diagonalLeft1 = document.querySelector('.diagonal.left').style.transition = 'none';
+
         let diagonalRight = document.querySelector('.diagonal.right').style.opacity = '0';
+        let diagonalRight1 = document.querySelector('.diagonal.right').style.transition = 'none';
 
         container.style.pointerEvents = 'initial';
         
