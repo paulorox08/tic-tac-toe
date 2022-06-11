@@ -6,13 +6,13 @@
     align-items: center;
     justify-content: center;
     font-size: 96px;
+    cursor: pointer;
 }
 
 .square:first-child,
 .square:nth-child(2),
 .square:nth-child(3) {
     border-top: 0;
-
 }
 
 .square:first-child,
