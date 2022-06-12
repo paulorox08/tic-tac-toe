@@ -13,8 +13,7 @@
     opacity: 0;
     width: 100%;
     height: 3px;
-    background-color: black;
-    transition: none;
+    background-color: var(--text-colour);
 }
 
 .containerVertical {
@@ -31,7 +30,7 @@
     opacity: 0;
     width: 3px;
     height: 100%;
-    background-color: black;
+    background-color: var(--text-colour);
 }
 
 .containerDiagonal {
@@ -48,7 +47,7 @@
     opacity: 0;
     width: 3px;
     height: 130%;
-    background-color: black;
+    background-color: var(--text-colour);
     transform: rotate(45deg);
 }
 
@@ -56,7 +55,7 @@
     opacity: 0;
     width: 3px;
     height: 130%;
-    background-color: black;
+    background-color: var(--text-colour);
     transform: rotate(315deg);
 }
 

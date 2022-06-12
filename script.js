@@ -11,12 +11,12 @@ const playerTurn = () => {
     const oscore = document.querySelector('.oscore');
 
     if (trackPlayer[lastIndex()] == 2) {
-        oscore.style.borderBottom = '4px solid black';
-        xscore.style.borderBottom = '4px solid gray';
+        oscore.style.borderBottom = '4px solid var(--text-colour)';
+        xscore.style.borderBottom = '4px solid var(--bg-colour)';
     }
     else if (trackPlayer[lastIndex()] == 1) {
-        xscore.style.borderBottom = '4px solid black';
-        oscore.style.borderBottom = '4px solid gray';
+        xscore.style.borderBottom = '4px solid var(--text-colour)';
+        oscore.style.borderBottom = '4px solid var(--bg-colour)';
     };
 }
 playerTurn();
@@ -196,4 +196,7 @@ function setTheme() {
   }
   
   setTheme();
-  document.querySelector('.toggle').addEventListener('click', setTheme);
+  document.querySelector('.toggle').addEventListener('click', () => {
+    setTheme();
+    playerTurn();
+  });
