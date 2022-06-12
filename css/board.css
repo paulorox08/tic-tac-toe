@@ -8,6 +8,7 @@
     font-size: 96px;
     cursor: pointer;
     color: var(--text-colour);
+    transition: 0.3s ease;
 }
 
 .square:first-child,

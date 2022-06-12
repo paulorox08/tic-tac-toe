@@ -27,14 +27,37 @@ body {
     align-items: center;
     justify-content: space-around;
     gap: 200px;
-    transition: 1s ease;
+    transition: 0.3s ease;
     background-color: var(--bg-colour);
 }
 
-.toggle {
+.toggle.material-symbols-outlined {
+    font-variation-settings: 
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48;
+    height: 90px;
     position: absolute;
+    color: var(--text-colour);
     top: 1%;
     right: 1%;
+    transition: 0.5s;
+    font-size: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.toggle.material-symbols-outlined:hover {
+    font-variation-settings: 
+    'FILL' 1,
+    'wght' 900,
+    'GRAD' 0,
+    'opsz' 48;
+    font-size: 36px;
+    cursor: pointer;
 }
 
 .header {
@@ -50,7 +73,7 @@ body {
     font-weight: 500;
     background-color: var(--header-footer-colour);
     padding: 10px;
-    transition: 1s ease;
+    transition: 0.3s ease;
     color: var(--text-colour);
 }
 
@@ -67,6 +90,7 @@ body {
     background-color: var(--header-footer-colour);
     font-family:'Roboto', sans-serif;
     color: var(--text-colour);
+    transition: 0.3s ease;
 }
 
 .fab {
@@ -115,12 +139,13 @@ body {
     align-items: center;
     text-align: center;
     gap: 50px;
+    transition: 0.3s ease;
 }
 
 .number {
     width: 25px;
     height: 25px;
-    border: 2px solid black;
+    border: 2px solid var(--text-colour);
     font-size: 18px;
     display: flex;
     align-items: center;
@@ -139,6 +164,8 @@ body {
     gap: 40px;
     padding-left: 10px;
     padding-right: 20px;
+    color: var(--text-colour);
+    transition: 0.3s ease;
 }
 
 .containerTwo {
@@ -150,11 +177,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 30px;
-}
-
-.message {
-    font-size: 24px;
-    padding-bottom: 30px;
+    transition: 0.3s ease;
 }
 
 .refresh {
@@ -165,12 +188,13 @@ body {
     padding: 10px;
     transition: 0.3s ease;
     border-radius: 5px;
+    color: var(--text-colour);
 }
 
 .refresh:hover {
     cursor: pointer;
-    background-color: black;
-    color: white;
+    background-color: var(--text-colour);
+    color: var(--bg-colour);
 
 }
 .restart.material-symbols-outlined{
