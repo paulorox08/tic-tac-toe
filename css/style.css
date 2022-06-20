@@ -181,7 +181,6 @@ body {
 }
 
 .refresh {
-    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -204,4 +203,8 @@ body {
 
 .text {
     font-family:'Roboto', sans-serif;
+}
+
+.ghostContainer {
+    position: absolute;
 }
