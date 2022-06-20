@@ -26,6 +26,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    overflow: auto;
     gap: 200px;
     transition: 0.3s ease;
     background-color: var(--bg-colour);
