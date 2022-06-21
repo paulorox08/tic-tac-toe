@@ -1,3 +1,17 @@
+function setTheme() {
+    const root = document.documentElement;
+    const newTheme = root.className === 'dark_mode' ? 'light_mode' : 'dark_mode';
+    root.className = newTheme;
+    
+    document.querySelector('.toggle').innerText = newTheme;
+  }
+  
+setTheme();
+document.querySelector('.toggle').addEventListener('click', () => {
+    setTheme();
+    playerTurn();
+});
+
 let trackPlayer = [1];
 
 function lastIndex() {
@@ -143,12 +157,64 @@ const checkWin = () => {
     }
 }
 
+const newOnes = () => {
+    const container = document.querySelector('.container');
+
+    let containerHorizontal = document.createElement('div');
+    containerHorizontal.className = "containerHorizontal";
+
+    container.appendChild(containerHorizontal);
+
+    let horizontalTop = document.createElement('div');
+    horizontalTop.className = "horizontal top";
+    let horizontalMid = document.createElement('div');
+    horizontalMid.className = "horizontal mid";
+    let horizontalBot = document.createElement('div');
+    horizontalBot.className = "horizontal bot";
+
+    containerHorizontal.appendChild(horizontalTop);
+    containerHorizontal.appendChild(horizontalMid);
+    containerHorizontal.appendChild(horizontalBot);
+
+    let containerVertical = document.createElement('div');
+    containerVertical.className = "containerVertical";
+
+    container.appendChild(containerVertical);
+
+    let verticalLeft= document.createElement('div');
+    verticalLeft.className = "vertical left";
+    let verticalMid= document.createElement('div');
+    verticalMid.className = "vertical mid";
+    let verticalRight= document.createElement('div');
+    verticalRight.className = "vertical right";
+
+    containerVertical.appendChild(verticalLeft);
+    containerVertical.appendChild(verticalMid);
+    containerVertical.appendChild(verticalRight);
+
+    let containerDiagonal = document.createElement('div');
+    containerDiagonal.className = "containerDiagonal";
+
+    container.appendChild(containerDiagonal);
+
+    let diagonalLeft= document.createElement('div');
+    diagonalLeft.className = "diagonal left";
+    let diagonalRight= document.createElement('div');
+    diagonalRight.className = "diagonal right";
+
+    containerDiagonal.appendChild(diagonalLeft);
+    containerDiagonal.appendChild(diagonalRight);
+}
+
+
 const newGame = () => {
     const refresh = document.querySelector('.refresh');
     const container = document.querySelector('.container');
 
     refresh.addEventListener('click', () => {
+
         container.innerText = "";
+        newOnes();
 
         trackPlayer.length = 1;
         playerTurn();
@@ -186,17 +252,3 @@ const newGame = () => {
 
 }
 newGame();
-
-function setTheme() {
-    const root = document.documentElement;
-    const newTheme = root.className === 'dark_mode' ? 'light_mode' : 'dark_mode';
-    root.className = newTheme;
-    
-    document.querySelector('.toggle').innerText = newTheme;
-  }
-  
-  setTheme();
-  document.querySelector('.toggle').addEventListener('click', () => {
-    setTheme();
-    playerTurn();
-  });
