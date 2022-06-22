@@ -97,11 +97,15 @@ const checkWin = () => {
     let diagonalLeft = document.querySelector('.diagonal.left');
     let diagonalRight = document.querySelector('.diagonal.right');
 
+    let modal = document.querySelector('.modal');
+    let message = document.querySelector('.message');
+
     if (square[0].innerText != "") {
         if (square[0].innerText === square[1].innerText && square[1].innerText === square[2].innerText) {
             horizontalTop.style.opacity = '1';
             horizontalTop.style.transition = '1s ease';
             container.style.pointerEvents = 'none';
+            modal.style.visibility = 'visible';
             updateScore();
         }
         if (square[0].innerText === square[4].innerText && square[4].innerText === square[8].innerText) {
@@ -206,49 +210,61 @@ const newOnes = () => {
     containerDiagonal.appendChild(diagonalRight);
 }
 
+const killEverything = () => {
+    const container = document.querySelector('.container');
+    const modal = document.querySelector('.modal');
+
+    modal.style.visibility = 'hidden';
+
+    container.innerText = "";
+    newOnes();
+
+    trackPlayer.length = 1;
+    playerTurn();
+
+    let horizontalTop = document.querySelector('.horizontal.top').style.transition = 'none';
+    let horizontalTop1 = document.querySelector('.horizontal.top').style.opacity = '0';
+
+    let horizontalMid = document.querySelector('.horizontal.mid').style.opacity = '0';
+    let horizontalMid1 = document.querySelector('.horizontal.mid').style.transition = 'none';
+
+    let horizontalBot = document.querySelector('.horizontal.bot').style.opacity = '0';
+    let horizontalBot1 = document.querySelector('.horizontal.bot').style.transition = 'none';
+
+    let verticalLeft = document.querySelector('.vertical.left').style.opacity = '0';
+    let verticalLeft1 = document.querySelector('.vertical.left').style.transition = 'none';
+
+    let verticalMid = document.querySelector('.vertical.mid').style.opacity = '0';
+    let verticalMid1 = document.querySelector('.vertical.mid').style.transition = 'none';
+
+    let verticalRight = document.querySelector('.vertical.right').style.opacity = '0';
+    let verticalRight1 = document.querySelector('.vertical.right').style.transition = 'none';
+
+    let diagonalLeft = document.querySelector('.diagonal.left').style.opacity = '0';
+    let diagonalLeft1 = document.querySelector('.diagonal.left').style.transition = 'none';
+
+    let diagonalRight = document.querySelector('.diagonal.right').style.opacity = '0';
+    let diagonalRight1 = document.querySelector('.diagonal.right').style.transition = 'none';
+
+    container.style.pointerEvents = 'initial';
+    
+    console.log(trackPlayer);
+
+    gameBoard();
+}
 
 const newGame = () => {
     const refresh = document.querySelector('.refresh');
-    const container = document.querySelector('.container');
+
+    const refreshOne = document.querySelector(".refresh.one");
 
     refresh.addEventListener('click', () => {
-
-        container.innerText = "";
-        newOnes();
-
-        trackPlayer.length = 1;
-        playerTurn();
-
-        let horizontalTop = document.querySelector('.horizontal.top').style.transition = 'none';
-        let horizontalTop1 = document.querySelector('.horizontal.top').style.opacity = '0';
-
-        let horizontalMid = document.querySelector('.horizontal.mid').style.opacity = '0';
-        let horizontalMid1 = document.querySelector('.horizontal.mid').style.transition = 'none';
-
-        let horizontalBot = document.querySelector('.horizontal.bot').style.opacity = '0';
-        let horizontalBot1 = document.querySelector('.horizontal.bot').style.transition = 'none';
-
-        let verticalLeft = document.querySelector('.vertical.left').style.opacity = '0';
-        let verticalLeft1 = document.querySelector('.vertical.left').style.transition = 'none';
-
-        let verticalMid = document.querySelector('.vertical.mid').style.opacity = '0';
-        let verticalMid1 = document.querySelector('.vertical.mid').style.transition = 'none';
-
-        let verticalRight = document.querySelector('.vertical.right').style.opacity = '0';
-        let verticalRight1 = document.querySelector('.vertical.right').style.transition = 'none';
-
-        let diagonalLeft = document.querySelector('.diagonal.left').style.opacity = '0';
-        let diagonalLeft1 = document.querySelector('.diagonal.left').style.transition = 'none';
-
-        let diagonalRight = document.querySelector('.diagonal.right').style.opacity = '0';
-        let diagonalRight1 = document.querySelector('.diagonal.right').style.transition = 'none';
-
-        container.style.pointerEvents = 'initial';
-        
-        console.log(trackPlayer);
-
-        gameBoard();
+        killEverything();
     });
+
+    refreshOne.addEventListener('click', () => {
+        killEverything();
+    })
 
 }
 newGame();
