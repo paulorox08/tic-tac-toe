@@ -179,15 +179,27 @@ const checkWin = () => {
             updateScore();
         }
     }
-
     else {
-        if (trackPlayer.length == 10) {
+        if (trackPlayer.length === 10) {
             modal.style.visibility = 'visible';
-            message.innerText = "It's a draw!"
         }
     }
 
 }
+
+// const checkDraw = () => {
+//     let modal = document.querySelector('.modal');
+//     let message = document.querySelector('.symbol');
+//     let wins = document.querySelector('.wins');
+
+//     let square = document.querySelectorAll('.square');
+
+//     let j = 0;
+//     while (j < 10) {
+//         if (square[j].innerText != "")
+//     }
+// }
+
 
 const newOnes = () => {
     const container = document.querySelector('.container');
