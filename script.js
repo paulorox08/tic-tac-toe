@@ -37,9 +37,8 @@ playerTurn();
 
 const gameBoard = () => {
     const container = document.querySelector(".container");
-    let i = 0;
     let j = 0;
-    while (i < 9) {
+    while (j < 9) {
         let square = document.createElement('div');
         square.className = `square material-symbols-outlined ${j}`
 
@@ -61,8 +60,6 @@ const gameBoard = () => {
         };
 
         container.appendChild(square);
-
-        i ++;
         j ++;
     };
 
@@ -98,7 +95,7 @@ const checkWin = () => {
     let diagonalRight = document.querySelector('.diagonal.right');
 
     let modal = document.querySelector('.modal');
-    let message = document.querySelector('.message');
+    let message = document.querySelector('.symbol');
 
     if (square[0].innerText != "") {
         if (square[0].innerText === square[1].innerText && square[1].innerText === square[2].innerText) {
@@ -106,18 +103,26 @@ const checkWin = () => {
             horizontalTop.style.transition = '1s ease';
             container.style.pointerEvents = 'none';
             modal.style.visibility = 'visible';
+            let i = square[0].innerText;
+            message.innerText = `${i}`
             updateScore();
         }
         if (square[0].innerText === square[4].innerText && square[4].innerText === square[8].innerText) {
             diagonalRight.style.opacity = '1';
             diagonalRight.style.transition = '1s ease';
             container.style.pointerEvents = 'none';
+            modal.style.visibility = 'visible';
+            let i = square[0].innerText;
+            message.innerText = `${i}`
             updateScore();
         }
         if (square[0].innerText === square[3].innerText && square[3].innerText === square[6].innerText) {
             verticalLeft.style.opacity = '1';
             verticalLeft.style.transition = '1s ease';
             container.style.pointerEvents = 'none';
+            modal.style.visibility = 'visible';
+            let i = square[0].innerText;
+            message.innerText = `${i}`
             updateScore();
         }
     }
@@ -126,6 +131,9 @@ const checkWin = () => {
             verticalMid.style.opacity = '1';
             verticalMid.style.transition = '1s ease';
             container.style.pointerEvents = 'none';
+            modal.style.visibility = 'visible';
+            let i = square[1].innerText;
+            message.innerText = `${i}`
             updateScore();
         }
     }
@@ -134,12 +142,18 @@ const checkWin = () => {
             verticalRight.style.opacity = '1';
             verticalRight.style.transition = '1s ease';
             container.style.pointerEvents = 'none';
+            modal.style.visibility = 'visible';
+            let i = square[2].innerText;
+            message.innerText = `${i}`
             updateScore();
         }
         if (square[2].innerText === square[4].innerText && square[4].innerText === square[6].innerText) {
             diagonalLeft.style.opacity = '1';
             diagonalLeft.style.transition = '1s ease';
             container.style.pointerEvents = 'none';
+            modal.style.visibility = 'visible';
+            let i = square[2].innerText;
+            message.innerText = `${i}`
             updateScore();
         }
     }
@@ -148,6 +162,9 @@ const checkWin = () => {
             horizontalMid.style.opacity = '1';
             horizontalMid.style.transition = '1s ease';
             container.style.pointerEvents = 'none';
+            modal.style.visibility = 'visible';
+            let i = square[3].innerText;
+            message.innerText = `${i}`
             updateScore();
         }
     }
@@ -156,9 +173,20 @@ const checkWin = () => {
             horizontalBot.style.opacity = '1';
             horizontalBot.style.transition = '1s ease';
             container.style.pointerEvents = 'none';
+            modal.style.visibility = 'visible';
+            let i = square[6].innerText;
+            message.innerText = `${i}`
             updateScore();
         }
     }
+
+    else {
+        if (trackPlayer.length == 10) {
+            modal.style.visibility = 'visible';
+            message.innerText = "It's a draw!"
+        }
+    }
+
 }
 
 const newOnes = () => {
