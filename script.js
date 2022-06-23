@@ -57,6 +57,7 @@ const gameBoard = () => {
             };
             console.log(trackPlayer);
             checkWin();
+            checkDraw();
         };
 
         container.appendChild(square);
@@ -106,6 +107,7 @@ const checkWin = () => {
             let i = square[0].innerText;
             message.innerText = `${i}`
             updateScore();
+            return true;
         }
         if (square[0].innerText === square[4].innerText && square[4].innerText === square[8].innerText) {
             diagonalRight.style.opacity = '1';
@@ -115,6 +117,7 @@ const checkWin = () => {
             let i = square[0].innerText;
             message.innerText = `${i}`
             updateScore();
+            return true;
         }
         if (square[0].innerText === square[3].innerText && square[3].innerText === square[6].innerText) {
             verticalLeft.style.opacity = '1';
@@ -124,6 +127,7 @@ const checkWin = () => {
             let i = square[0].innerText;
             message.innerText = `${i}`
             updateScore();
+            return true;
         }
     }
     if (square[1].innerText != "") {
@@ -135,6 +139,7 @@ const checkWin = () => {
             let i = square[1].innerText;
             message.innerText = `${i}`
             updateScore();
+            return true;
         }
     }
     if (square[2].innerText != "") {
@@ -146,6 +151,7 @@ const checkWin = () => {
             let i = square[2].innerText;
             message.innerText = `${i}`
             updateScore();
+            return true;
         }
         if (square[2].innerText === square[4].innerText && square[4].innerText === square[6].innerText) {
             diagonalLeft.style.opacity = '1';
@@ -155,6 +161,7 @@ const checkWin = () => {
             let i = square[2].innerText;
             message.innerText = `${i}`
             updateScore();
+            return true;
         }
     }
     if (square[3].innerText != "") {
@@ -166,6 +173,7 @@ const checkWin = () => {
             let i = square[3].innerText;
             message.innerText = `${i}`
             updateScore();
+            return true;
         }
     }
     if (square[6].innerText != "") {
@@ -177,29 +185,24 @@ const checkWin = () => {
             let i = square[6].innerText;
             message.innerText = `${i}`
             updateScore();
+            return true;
         }
     }
-    else {
-        if (trackPlayer.length === 10) {
-            modal.style.visibility = 'visible';
-        }
-    }
-
 }
 
-// const checkDraw = () => {
-//     let modal = document.querySelector('.modal');
-//     let message = document.querySelector('.symbol');
-//     let wins = document.querySelector('.wins');
+const checkDraw = () => {
+    let modal = document.querySelector('.modal');
+    let message = document.querySelector('.symbol');
+    let wins = document.querySelector('.wins');
 
-//     let square = document.querySelectorAll('.square');
+    let square = document.querySelectorAll('.square');
 
-//     let j = 0;
-//     while (j < 10) {
-//         if (square[j].innerText != "")
-//     }
-// }
-
+    if (checkWin != true && trackPlayer.length == 10) {
+        modal.style.visibility = 'visible';
+        message.innerText = "";
+        wins.innerText = "It's a draw!";
+    }
+}
 
 const newOnes = () => {
     const container = document.querySelector('.container');

@@ -5,7 +5,7 @@
     --squares-border-colour: black;
     --text-colour: black;
     --scoreboard-colour: grey;
-
+    --rgb-colour: rgba(252, 191, 73, 0.3)
 }
 
 /* CHANGING TO DARK MODE */
@@ -15,7 +15,7 @@
     --squares-border-colour: white;
     --text-colour: white;
     --scoreboard-colour: #457b9d;
-
+    --rgb-colour: rgba(29, 53, 87, 0.3)
 }
 
 body {
@@ -210,7 +210,7 @@ body {
     position: absolute;
     height: 100%;
     width: 100%;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0,0,0,0.3);
     z-index: 1;
     display: flex;
     flex-direction: column;
@@ -221,7 +221,7 @@ body {
 .modalContainer {
     padding: 20px;
     text-align: center;
-    background-color: white;
+    background-color: var(--header-footer-colour);
     opacity: 1;
     display: flex;
     flex-direction: column;
@@ -234,6 +234,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 5px;
+    color: var(--text-colour);
 }
 
 .wins {
