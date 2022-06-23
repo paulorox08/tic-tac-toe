@@ -56,7 +56,6 @@ const gameBoard = () => {
                 square.onclick = null;
             };
             console.log(trackPlayer);
-            checkWin();
             checkDraw();
             
         };
