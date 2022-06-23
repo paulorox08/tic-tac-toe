@@ -1,0 +1,44 @@
+.modal {
+    visibility: hidden;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background: rgba(0,0,0,0.3);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalContainer {
+    padding: 20px;
+    text-align: center;
+    background-color: var(--header-footer-colour);
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 5px;
+}
+
+.message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    color: var(--text-colour);
+}
+
+.wins {
+    font-size: 28px;
+    font-family:'Roboto', sans-serif;  
+}
+
+.symbol.material-symbols-outlined {
+    font-size: 48px;
+}
+.refresh.one {
+    transition: none;
+}

@@ -1,0 +1,74 @@
+.scoreboard {
+    width: 100%;
+    background-color: var(--bg-colour);
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 50px;
+    transition: 0.3s ease;
+}
+
+.number {
+    width: 25px;
+    height: 25px;
+    border: 2px solid var(--text-colour);
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-family:'Roboto', sans-serif;
+}
+
+.xscore.material-symbols-outlined,
+.oscore.material-symbols-outlined {
+    border-radius: 5px;
+    font-size: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding-left: 10px;
+    padding-right: 20px;
+    color: var(--text-colour);
+    transition: 0.3s ease;
+}
+
+.containerTwo {
+    width: 100%;
+    height: auto;
+    background-color: var(--bg-colour);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    transition: 0.3s ease;
+}
+
+.refresh {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    transition: 0.3s ease;
+    border-radius: 5px;
+    color: var(--text-colour);
+}
+
+.refresh:hover {
+    cursor: pointer;
+    background-color: var(--text-colour);
+    color: var(--bg-colour);
+
+}
+.restart.material-symbols-outlined{
+    font-size: 36px;
+}
+
+.text {
+    font-family:'Roboto', sans-serif;
+}
