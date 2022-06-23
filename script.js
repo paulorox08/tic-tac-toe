@@ -58,6 +58,7 @@ const gameBoard = () => {
             console.log(trackPlayer);
             checkWin();
             checkDraw();
+            
         };
 
         container.appendChild(square);
@@ -97,6 +98,7 @@ const checkWin = () => {
 
     let modal = document.querySelector('.modal');
     let message = document.querySelector('.symbol');
+    let wins = document.querySelector('.wins');
 
     if (square[0].innerText != "") {
         if (square[0].innerText === square[1].innerText && square[1].innerText === square[2].innerText) {
@@ -106,6 +108,7 @@ const checkWin = () => {
             modal.style.visibility = 'visible';
             let i = square[0].innerText;
             message.innerText = `${i}`
+            wins.innerText = 'wins!'
             updateScore();
             return true;
         }
@@ -115,7 +118,8 @@ const checkWin = () => {
             container.style.pointerEvents = 'none';
             modal.style.visibility = 'visible';
             let i = square[0].innerText;
-            message.innerText = `${i}`
+            message.innerText = `${i}`;
+            wins.innerText = 'wins!'
             updateScore();
             return true;
         }
@@ -125,7 +129,8 @@ const checkWin = () => {
             container.style.pointerEvents = 'none';
             modal.style.visibility = 'visible';
             let i = square[0].innerText;
-            message.innerText = `${i}`
+            message.innerText = `${i}`;
+            wins.innerText = 'wins!'
             updateScore();
             return true;
         }
@@ -137,7 +142,8 @@ const checkWin = () => {
             container.style.pointerEvents = 'none';
             modal.style.visibility = 'visible';
             let i = square[1].innerText;
-            message.innerText = `${i}`
+            message.innerText = `${i}`;
+            wins.innerText = 'wins!'
             updateScore();
             return true;
         }
@@ -149,7 +155,8 @@ const checkWin = () => {
             container.style.pointerEvents = 'none';
             modal.style.visibility = 'visible';
             let i = square[2].innerText;
-            message.innerText = `${i}`
+            message.innerText = `${i}`;
+            wins.innerText = 'wins!';
             updateScore();
             return true;
         }
@@ -159,7 +166,8 @@ const checkWin = () => {
             container.style.pointerEvents = 'none';
             modal.style.visibility = 'visible';
             let i = square[2].innerText;
-            message.innerText = `${i}`
+            message.innerText = `${i}`;
+            wins.innerText = 'wins!';
             updateScore();
             return true;
         }
@@ -171,7 +179,8 @@ const checkWin = () => {
             container.style.pointerEvents = 'none';
             modal.style.visibility = 'visible';
             let i = square[3].innerText;
-            message.innerText = `${i}`
+            message.innerText = `${i}`;
+            wins.innerText = 'wins!';
             updateScore();
             return true;
         }
@@ -183,7 +192,8 @@ const checkWin = () => {
             container.style.pointerEvents = 'none';
             modal.style.visibility = 'visible';
             let i = square[6].innerText;
-            message.innerText = `${i}`
+            message.innerText = `${i}`;
+            wins.innerText = 'wins!';
             updateScore();
             return true;
         }
@@ -192,14 +202,12 @@ const checkWin = () => {
 
 const checkDraw = () => {
     let modal = document.querySelector('.modal');
-    let message = document.querySelector('.symbol');
     let wins = document.querySelector('.wins');
+    let symbol = document.querySelector('.symbol');
 
-    let square = document.querySelectorAll('.square');
-
-    if (checkWin != true && trackPlayer.length == 10) {
+    if (checkWin() != true && trackPlayer.length == 10) {
+        symbol.innerText = '';
         modal.style.visibility = 'visible';
-        message.innerText = "";
         wins.innerText = "It's a draw!";
     }
 }
