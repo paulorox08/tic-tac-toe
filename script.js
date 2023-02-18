@@ -309,12 +309,19 @@ const newGame = () => {
     const refreshOne = document.querySelector(".refresh.one");
 
     refresh.addEventListener('click', () => {
+        const xScore = document.querySelector('.x.number');
+        xScore.innerText = 0;
+
+        const oScore = document.querySelector('.o.number');
+        oScore.innerText = 0;
         killEverything();
     });
 
     refreshOne.addEventListener('click', () => {
         killEverything();
     })
+
+    
 
 }
 newGame();
